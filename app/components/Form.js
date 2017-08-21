@@ -13,12 +13,15 @@ class Form extends Component {
         e.preventDefault();
         const newTag = this.state.inputVal;
         this.props.addTag(newTag);
+        this.setState({
+            inputVal: ''
+        })
     }
     render() {
         return (
-            <div onSubmit={this.handleSubmit}>
-                <form>
-                    <input type="text" placeholder='Search tags e.g: "javascript"'
+            <div id="form">
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" placeholder='Search by tags e.g: javascript'
                      value={this.state.inputVal} 
                      onChange={this.handleChange}
                      required
